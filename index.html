@@ -18,19 +18,20 @@
     </div>
   </div>
   <div class="container">
-    <div class="window" style="padding: 10rem 1rem;"></div>
+    <div class="window" style="padding: 10% 1rem;"></div>
   </div>
-  <div id="clear"></div>
   <br> 
   <div class="container">
-
     <div class="row">
       <div class="col-6">
         <div class="jumbotron">
-          <h1 class="display-3">About Me</h1>
-          <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          <h1 class="display-3 text-center">About Me</h1>
           <hr class="my-4">
-          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <img src="DSC_0078-2(9).jpg" style="width:100%">
+          <hr class="my-4">
+          <p class="text-center">CSUN Computer Science Undergraduate</p>
+          <p class="text-center">CSUN META+Lab, Scrum Master</p>
+          <p class="text-center">HTML5, CSS3, JavaScript, JQuery, PHP, Laravel</p>
         </div>
       </div>
       <div class="col-6" style="margin-bottom: 2rem;">
@@ -53,7 +54,8 @@
   $(document).on('ready', function() {
     $('.window').parallax({imageSrc: "https://images.unsplash.com/photo-1444201716572-c60ec66d0494?dpr=1.25&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop="});
     $('#code').parallax({imageSrc: "https://images.unsplash.com/photo-1454165205744-3b78555e5572?dpr=1.25&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop="});
-
+    $('#meta').parallax({imageSrc: "http://makeinla.com/wp-content/uploads/2015/05/aboutimg2.jpg"});
+    $('#seal').parallax({imageSrc: "https://upload.wikimedia.org/wikipedia/commons/c/cc/CSUN_Seal.png"});
   });
 </script>
 </html>
