@@ -1,0 +1,40 @@
+.first-container {
+    background-color: #02684c;
+    width: 100vw;
+    height: 100vh;
+}
+
+.v-align-middle {
+    /* Internet Explorer 10 */
+    display:-ms-flexbox;
+    -ms-flex-pack:center;
+    -ms-flex-align:center;
+
+    /* Firefox */
+    display:-moz-box;
+    -moz-box-pack:center;
+    -moz-box-align:center;
+
+    /* Safari, Opera, and Chrome */
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+
+    /* W3C */
+    display:box;
+    box-pack:center;
+    box-align:center;
+}
+
+.typewriter {
+    border-right: .15em solid #ffffff; /* The typwriter cursor */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #ffffff; }
+  }
