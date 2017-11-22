@@ -27,6 +27,13 @@
     box-align:center;
 }
 
+.typewriter-title {
+    border-right: .15em solid #000000; /* The typwriter cursor */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      blink-caret-title .75s step-end infinite;
+  }
+
 .typewriter {
     border-right: .15em solid #ffffff; /* The typwriter cursor */
     letter-spacing: .15em; /* Adjust as needed */
@@ -43,4 +50,10 @@
   @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: #ffffff; }
+  }
+
+  /* The typewriter cursor effect */
+  @keyframes blink-caret-title {
+    from, to { border-color: transparent }
+    50% { border-color: #000000; }
   }

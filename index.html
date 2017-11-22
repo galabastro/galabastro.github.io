@@ -18,42 +18,11 @@
     </div>
     <div class="container-fluid first-container" style="padding:0">
       <div class="float-left text-center" style="background-color:#025168; width: 40%; height: 100vh;" id="second-container">
-        <div class="container" style="padding-top:10%">
+        <div class="container" style="padding-top:10vh">
+          <div class="container">
+            <img src=".\DSC_0078-2(9).jpg" class="img-fluid" alt="Responsive image" style="max-width:100%; max-height:80vh;"/>
+          </div>
           <span id="typewriter-title" style="font-family: Consolas,monaco,monospace; color:#ffffff; font-size:1em; letter-spacing: .15em;">
-            MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM<br />
-            MMMMMMMMMMMMMMMMMMMmhhyyhNMMMMMMMMMMMMMMMMMMMM<br />
-            MMMMMMMMMMMMMMMMMh-`````.-+dMMMMMMMMMMMMMMMMMM<br />
-            MMMMMMMMMMMMMMMN+``./syyo:..dMMMMMMMMMMMMMMMMM<br />
-            MMMMMMMMMMMMMMMd`&nbsp;.ymNNNNmy.-NMMMMMMMMMMMMMMMM<br />
-            MMMMMMMMMMMMMMMN..oyhdNNdhho.hMMMMMMMMMMMMMMMM<br />
-            MMMMMMMMMMMMMMMN.yyosymmsssd+hMMMMMMMMMMMMMMMM<br />
-            MMMMMMMMMMMMMMMN+ymmmmNNmmNmsNMMMMMMMMMMMMMMMM<br />
-            MMMMMMMMMMMMMMMMs+dmdsyyhdmd/MMMMMMMMMMMMMMMMM<br />
-            MMMMMMMMMMMMMMMMm./s+oyysoh/:MMMMMMMMMMMMMMMMM<br />
-            MMMMMMMMMMMMMMMMM+`-+s++hs:`hMMMMMMMMMMMMMMMMM<br />
-            MMMMMMMMMMMMMMNmy...`...---`/ydNMMMMMMMMMMMMMM<br />
-            MMMMMMMMMMNmho:.```++///os:`...-/sdNMMMMMMMMMM<br />
-            MMMMMMMNds:.`````` -/shhs/````.``..:/ydMMMMMMM<br />
-            MMMMMMN/.``````````` `:/` ``````````..-hMMMMMM<br />
-            MMMMMN/```````````````..````````.`````.-mMMMMM<br />
-            MMMMMo`````````````````.````````````````:NMMMM<br />
-            MMMMh``````````````````.`````````````````/NMMM<br />
-            MMMm.```` ````````````-:```````````` `````sMMM<br />
-            MMN:`````&nbsp;&nbsp;```````````..```````````&nbsp;&nbsp;`````.dMM<br />
-            MMs`````&nbsp;&nbsp;&nbsp;&nbsp;```````````````````````&nbsp;&nbsp;``````:NM<br />
-            Md.``````&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;````````.```````````&nbsp;&nbsp;`````..yM<br />
-            Mmho-..``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```````./``````````````.--:hdNM<br />
-            MNNm+sys+--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```````````````````--oyhssMMMM<br />
-            MNNmohdy++s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;````````````````&nbsp;::+hdyhMMMM<br />
-            NNNmshddssm.&nbsp;&nbsp;``&nbsp;``````.````````&nbsp;&nbsp;`hoyddyyNMMM<br />
-            NNNmoyhdhoh.`&nbsp;&nbsp;&nbsp;&nbsp;``````/````&nbsp;&nbsp;&nbsp;&nbsp;```yohhhshNMMM<br />
-            NNNNsoyhhyo.&nbsp;&nbsp;`&nbsp;&nbsp;&nbsp;```````````````&nbsp;&nbsp;:shhyomNNMM<br />
-            NNNNd/oyhho-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`&nbsp;&nbsp;&nbsp;`&nbsp;``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`+yhyoyNNNNM<br />
-            NNNNmy/oyhs.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-yhyoomNNNNN<br />
-            mmmmmms/oyyo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`+yyo+dNNNNNN<br />
-            mmmmmmms/syy:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:yys+hNNNNNNN<br />
-            mmmmmmmms+oys&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.shs/ymNNNNNNN<br />
-            mmmmmmmmd+oyo`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`.:/::hmNNNmmNN<br />
             <br />
             Written By: Gabriel Alabastro
           </span>
@@ -62,7 +31,10 @@
       <div class="float-right" style="background-color:#000000; width: 60%; height: 100vh;" id="third-container">
         <div class="container">
           <span class="typewriter-disabled" style="font-family: Consolas,monaco,monospace; color:#ffffff; font-size:1em">
-            All rights reserved. No part of this publication may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the publisher, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law. Please, understand that this is for thematic reasons. There really isn't a copyright or anything of that nature.
+            All rights reserved. No part of this publication may be reproduced, distributed, or transmitted in any form or by any means, 
+            including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the 
+            publisher, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted 
+            by copyright law. Please, understand that this is for thematic reasons. There really isn't a copyright or anything of that nature.
           </span>
           <br />
           <br />
@@ -117,7 +89,7 @@
       var next_step = function() {
           $('#title').stop().removeClass('container-fluid').animate({
             width: '40%',
-            height: '0%'
+            height: '10vh'
           }, 'slow', 'swing', function() {
             $('#second-container').slideDown('fast');
             following_step();
@@ -155,7 +127,9 @@
           if (i < foreword.length) {
             setTimeout(type_next_letter_foreword, type_speed);
           } else {
-            $('#typewriter-foreword').append('DONE!');
+            $('#typewriter-foreword').append('ERROR!');
+            $('#typewriter-foreword').append('<br />');
+            $('#typewriter-foreword').append('ERR NO[HY000]: Site still under construction.');
           return false;
           }
         }
