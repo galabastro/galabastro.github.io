@@ -13,11 +13,58 @@
   <body style="overflow-x: hidden;">
     <div class="container-fluid text-center nav-slide-down v-align-middle" id="title" style="position:absolute; width:100%; height:20%; background-color:#025168;">
       <h1>
-        <span class="typewriter" style="font-family: Consolas,monaco,monospace; color:#ffffff; font-size:1em"></span>
+        <span class="typewriter" id="typewriter-title" style="font-family: Consolas,monaco,monospace; color:#ffffff; font-size:1em"></span>
       </h1>
     </div>
     <div class="container-fluid first-container" style="padding:0">
-      <div style="background-color:#684c02; width: 50%; height: 100vh;" id="second-container" style="float:right;"></div>
+      <div class="float-left text-center" style="background-color:#684c02; width: 40%; height: 100vh;" id="second-container">
+        <div class="container" style="padding-top:10%">
+          <span id="typewriter-title" style="font-family: Consolas,monaco,monospace; color:#ffffff; font-size:1em; letter-spacing: .15em;">
+            MMMMMMMMMMMMMMMMMMMmhhyyhNMMMMMMMMMMMMMMMMMMMM<br />
+            MMMMMMMMMMMMMMMMMh-`````.-+dMMMMMMMMMMMMMMMMMM<br />
+            MMMMMMMMMMMMMMMN+``./syyo:..dMMMMMMMMMMMMMMMMM<br />
+            MMMMMMMMMMMMMMMd`&nbsp;.ymNNNNmy.-NMMMMMMMMMMMMMMMM<br />
+            MMMMMMMMMMMMMMMN..oyhdNNdhho.hMMMMMMMMMMMMMMMM<br />
+            MMMMMMMMMMMMMMMN.yyosymmsssd+hMMMMMMMMMMMMMMMM<br />
+            MMMMMMMMMMMMMMMN+ymmmmNNmmNmsNMMMMMMMMMMMMMMMM<br />
+            MMMMMMMMMMMMMMMMs+dmdsyyhdmd/MMMMMMMMMMMMMMMMM<br />
+            MMMMMMMMMMMMMMMMm./s+oyysoh/:MMMMMMMMMMMMMMMMM<br />
+            MMMMMMMMMMMMMMMMM+`-+s++hs:`hMMMMMMMMMMMMMMMMM<br />
+            MMMMMMMMMMMMMMNmy...`...---`/ydNMMMMMMMMMMMMMM<br />
+            MMMMMMMMMMNmho:.```++///os:`...-/sdNMMMMMMMMMM<br />
+            MMMMMMMNds:.`````` -/shhs/````.``..:/ydMMMMMMM<br />
+            MMMMMMN/.``````````` `:/` ``````````..-hMMMMMM<br />
+            MMMMMN/```````````````..````````.`````.-mMMMMM<br />
+            MMMMMo`````````````````.````````````````:NMMMM<br />
+            MMMMh``````````````````.`````````````````/NMMM<br />
+            MMMm.```` ````````````-:```````````` `````sMMM<br />
+            MMN:`````&nbsp;&nbsp;```````````..```````````&nbsp;&nbsp;`````.dMM<br />
+            MMs`````&nbsp;&nbsp;&nbsp;&nbsp;```````````````````````&nbsp;&nbsp;``````:NM<br />
+            Md.``````&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;````````.```````````&nbsp;&nbsp;`````..yM<br />
+            Mmho-..``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```````./``````````````.--:hdNM<br />
+            MNNm+sys+--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```````````````````--oyhssMMMM<br />
+            MNNmohdy++s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;````````````````&nbsp;::+hdyhMMMM<br />
+            NNNmshddssm.&nbsp;&nbsp;``&nbsp;``````.````````&nbsp;&nbsp;`hoyddyyNMMM<br />
+            NNNmoyhdhoh.`&nbsp;&nbsp;&nbsp;&nbsp;``````/````&nbsp;&nbsp;&nbsp;&nbsp;```yohhhshNMMM<br />
+            NNNNsoyhhyo.&nbsp;&nbsp;`&nbsp;&nbsp;&nbsp;```````````````&nbsp;&nbsp;:shhyomNNMM<br />
+            NNNNd/oyhho-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`&nbsp;&nbsp;&nbsp;`&nbsp;``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`+yhyoyNNNNM<br />
+            NNNNmy/oyhs.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-yhyoomNNNNN<br />
+            mmmmmms/oyyo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`+yyo+dNNNNNN<br />
+            mmmmmmms/syy:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:yys+hNNNNNNN<br />
+            mmmmmmmms+oys&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.shs/ymNNNNNNN<br />
+            mmmmmmmmd+oyo`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`.:/::hmNNNmmNN<br />
+            <br />
+            Written By: Gabriel Alabastro
+          </span>
+        </div>
+      </div>
+      <div class="float-right" style="background-color:#000000; width: 60%; height: 100vh;" id="third-container">
+        <div class="container">
+          <span class="typewriter" id="typewriter-toc" style="font-family: Consolas,monaco,monospace; color:#ffffff; font-size:1em">
+            Loading Table of Contents..................
+          </span>
+        </div>
+      </div>
     </div>
   </body>
 
@@ -33,6 +80,7 @@
   crossorigin="anonymous"></script>
   <script type="text/javascript">
     $(document).ready(function() {
+      $('#third-container').hide();
       $('#second-container').hide();
       $('.first-container').hide();
       $('.nav-slide-down').hide();
@@ -44,7 +92,7 @@
 
         var i = 0
         type_next_letter = function() {
-          $('.typewriter').append(title_message[i]);
+          $('#typewriter-title').append(title_message[i]);
           i++;
           if (i < title_message.length) {
             setTimeout(type_next_letter, type_speed);
@@ -56,11 +104,41 @@
       });
       var next_step = function() {
           $('#title').stop().removeClass('container-fluid').animate({
-            width: '50%'
+            width: '40%',
+            height: '10%'
           }, 'slow', 'swing', function() {
-            $('#second-container').slideDown('fast');
+            $('#second-container').slideDown('slow');
+            following_step();
           });
+          return false;
         }
+      var following_step = function() {
+        var table_of_contents = $('#typewriter-toc').text();
+        $('#typewriter-toc').text('');
+        $('#third-container').slideToggle('fast');
+        var i = 0;
+        var type_speed = 100;
+        type_next_letter_toc = function() {
+          $('#typewriter-toc').append(table_of_contents[i]);
+          i++;
+          if (i < table_of_contents.length) {
+            setTimeout(type_next_letter_toc, type_speed);
+          } else {
+            $('#typewriter-toc').append('DONE!');
+            $('#third-container').stop().animate({
+              height: '10%'
+            }, 'slow', 'swing', function() {
+              $('#typewriter-toc').text('');
+              $('#third-container').stop().animate({
+                width: '0%',
+                direction: 'right'
+              }, 'fast')
+          });
+          return false;
+          }
+        }
+        var timeout = setTimeout(type_next_letter_toc, type_speed);
+      }
     });
   </script>
   <!-- 
