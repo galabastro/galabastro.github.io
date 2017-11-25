@@ -16,12 +16,11 @@ $(function(){
 		}	
         function load_novel_landing(is_mobile = null) {
 			if (is_mobile) {
-				console.log('You got here.');
 				$('#title').animate({
 					width: '100%',
 					height: '10vh'
 					}, 'slow', 'swing', function() {
-						$('#console').width('100%').css('padding-top', '10vh').slideToggle('fast');
+						$('#console').width('100%').height('100%').css('padding-top', '10vh').slideToggle('fast');
 						$('#book-cover').hide();
 						load_table_of_contents();
 					});
@@ -125,7 +124,8 @@ $(function(){
         // Remove the class .typewriter-disabled
         $(element).removeClass('typewriter-disabled');
     
-        // Initialize variables
+		// Initialize variables
+		$('body, html, #console').animate({ scrollTop: $(element).offset().top }, 1000);
         var i = 0;
         type_next_letter = function() {
 			$(element).append(message[i]);
