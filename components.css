@@ -44,10 +44,6 @@ body {
   display: none; 
 }
 
-#book-cover-container {
-  padding-top: 10vh;
-}
-
 #book-cover-image {
   max-width: 100%; 
   max-height: 80vh;

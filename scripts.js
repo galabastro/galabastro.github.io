@@ -137,7 +137,7 @@ $(function(){
         $(element).removeClass('typewriter-disabled');
     
 		// Initialize variables
-		$('body, html, #console').animate({ scrollTop: $(element).offset().top }, 1000);
+		$('body, html, #console').stop().animate({ scrollTop: $(element).offset().top }, 1000);
         var i = 0;
         type_next_letter = function() {
 			$(element).append(message[i]);
