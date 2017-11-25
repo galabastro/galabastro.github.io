@@ -20,7 +20,7 @@ $(function(){
 					width: '100%',
 					height: '10vh'
 					}, 'slow', 'swing', function() {
-						$('#console').width('100%').height('100%').css('padding-top', '10vh').slideToggle('fast');
+						$('#console').width('100%').height('90vh').css('padding-top', '10vh').slideToggle('fast');
 						$('#book-cover').hide();
 						load_table_of_contents();
 					});
