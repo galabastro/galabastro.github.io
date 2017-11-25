@@ -1,11 +1,17 @@
 $(function(){
     $(document).ready(function() {
+		var is_mobile = $('.check-mobile').css('float') == 'none';
+		var is_landscape = $('.check-landscape').css('float') == 'none';
+
+		console.log('is_mobile: '+is_mobile);
+		console.log('is_landscape: '+is_landscape);
+
 		$('#title').hide();
-		if ($('.check-mobile').css('float') == 'none') {
+		if (is_mobile) {
 			$('#page-container').fadeIn('slow', function() {
 				$('#typewriter-title').addClass('typewriter-mobile');
 				load_title('#title');
-				type_message('#typewriter-title', 'Software_Novelist', 100, load_novel_landing, true);
+				type_message('#typewriter-title', 'Software_Novelist', 100, load_novel_landing, is_mobile, is_landscape);
 				// type_message('#typewriter-title', 'Software_Novelist', 100, load_novel_landing);
 			});
 		} else {
@@ -14,16 +20,22 @@ $(function(){
 				type_message('#typewriter-title', 'Software_Novelist', 100, load_novel_landing);
 			});
 		}	
-        function load_novel_landing(is_mobile = null) {
+        function load_novel_landing(is_mobile = null, is_landscape = null) {
 			if (is_mobile) {
-				$('#title').animate({
-					width: '100%',
-					height: '10vh'
-					}, 'slow', 'swing', function() {
-						$('#console').width('100%').height('90vh').css('padding-top', '10vh').slideToggle('fast');
-						$('#book-cover').hide();
-						load_table_of_contents();
-					});
+				if (is_landscape) {
+					$('#console').width('100%').height('75vh').slideToggle('fast');
+					$('#book-cover').hide();
+					load_table_of_contents();
+				} else {
+					$('#title').animate({
+						width: '100%',
+						height: '10vh'
+						}, 'slow', 'swing', function() {
+							$('#console').width('100%').height('80vh').slideToggle('fast');
+							$('#book-cover').hide();
+							load_table_of_contents();
+						});
+				}
 			} else {
 				$('#title').stop().removeClass('container-fluid').animate({
 					width: '40%',
@@ -115,7 +127,7 @@ $(function(){
      *
      * @return void
      */
-    function type_message(element, message, type_speed, callback_function = null, is_mobile = null) {
+    function type_message(element, message, type_speed, callback_function = null, is_mobile = null, is_landscape = null) {
         // Check to make sure element passed in has the class typewriter
         if (!$(element).hasClass('typewriter')) {
         	$element.addClass('typewriter');	
@@ -135,7 +147,7 @@ $(function(){
             } else {
             	$(element).addClass('typewriter-disabled');
 				if (callback_function != null) {
-					callback_function(is_mobile);
+					callback_function(is_mobile, is_landscape);
 				}
             return false;
             }
