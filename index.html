@@ -7,30 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
+      integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" 
+      crossorigin="anonymous">
     <link rel="stylesheet" href="./components.css">
   </head>
-  <body style="position: fixed;">
-    <div class="container-fluid text-center nav-slide-down v-align-middle" id="title" style="position:absolute; width:100%; height:20%; background-color:#025168;">
+  <body>
+    <div class="container-fluid text-center v-align-middle" id="title">
       <h1>
-        <span class="typewriter" id="typewriter-title" style="font-family: Consolas,monaco,monospace; color:#ffffff; font-size:1em"></span>
+        <span class="typewriter" id="typewriter-title"></span>
       </h1>
     </div>
-    <div class="container-fluid first-container" style="padding:0">
-      <div class="float-left text-center" style="background-color:#025168; width: 40%; height: 100vh;" id="second-container">
-        <div class="container" style="padding-top:10vh">
+    <div class="container-fluid" id="page-container">
+      <div class="float-left text-center" id="book-cover">
+        <div class="container" id="book-cover-container">
           <div class="container">
-            <img src=".\DSC_0078-2(9).jpg" class="img-fluid" alt="Responsive image" style="max-width:100%; max-height:80vh;"/>
+            <img src=".\DSC_0078-2(9).jpg" class="img-fluid" id="book-cover-image" alt="Cover Picture"/>
           </div>
-          <span id="typewriter-title" style="font-family: Consolas,monaco,monospace; color:#ffffff; font-size:1em; letter-spacing: .15em;">
-            <br />
-            Written By: Gabriel Alabastro
-          </span>
+          <span class="typewriter typewriter-disabled"><br />Written By: Gabriel Alabastro</span>
         </div>
       </div>
-      <div class="float-right" style="background-color:#000000; width: 60%; height: 100vh;" id="third-container">
+      <div class="float-right" id="console">
         <div class="container">
-          <span class="typewriter-disabled" style="font-family: Consolas,monaco,monospace; color:#ffffff; font-size:1em">
+          <span class="typewriter typewriter-disabled">
             All rights reserved. No part of this publication may be reproduced, distributed, or transmitted in any form or by any means, 
             including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the 
             publisher, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted 
@@ -38,104 +37,32 @@
           </span>
           <br />
           <br />
-          <span class="typewriter-disabled" style="font-family: Consolas,monaco,monospace; color:#ffffff; font-size:1em">
+          <span class="typewriter typewriter-disabled">
             Initializing Novel
           </span>
           <br />
-          <span class="typewriter" id="typewriter-toc" style="font-family: Consolas,monaco,monospace; color:#ffffff; font-size:1em">
-            Loading Table of Contents..................</span>
-          <br />
-          <span class="typewriter typewriter-disabled" id="typewriter-foreword" style="font-family: Consolas,monaco,monospace; color:#ffffff; font-size:1em">
-            </span>
+          <span class="typewriter" id="loading-toc"></span><br />
+          <span class="typewriter typewriter-disabled" id="loading-foreword"></span><br />
+          <span class="typewriter typewriter-disabled" id="loading-chapter-1"></span><br />
+          <span class="typewriter typewriter-disabled" id="loading-chapter-2"></span><br />
+          <span class="typewriter typewriter-disabled" id="loading-about-the-author"></span><br />
         </div>
       </div>
     </div>
   </body>
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  <script src="./scripts.js"></script>
-
   <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $('#third-container').hide();
-      $('#second-container').hide();
-      $('.first-container').hide();
-      $('.nav-slide-down').hide();
-      $('.first-container').fadeIn('slow', function() {
-        $('.nav-slide-down').slideDown('slow');              
-        $('.nav-slide-down').fadeIn('slow');
-        var title_message = "Software_Novelist".split("");
-        var type_speed = 100;
-
-        var i = 0
-        type_next_letter = function() {
-          $('#typewriter-title').append(title_message[i]);
-          i++;
-          if (i < title_message.length) {
-            setTimeout(type_next_letter, type_speed);
-          } else {
-            setTimeout(next_step, type_speed * 3);
-          }
-        }
-        var timeout = setTimeout(type_next_letter, type_speed);
-      });
-      var next_step = function() {
-          $('#title').stop().removeClass('container-fluid').animate({
-            width: '40%',
-            height: '10vh'
-          }, 'slow', 'swing', function() {
-            $('#second-container').slideDown('fast');
-            following_step();
-          });
-          return false;
-        }
-      var following_step = function() {
-        var table_of_contents = $('#typewriter-toc').text();
-        $('#typewriter-toc').text('');
-        $('#third-container').slideToggle('fast');
-        var i = 0;
-        var type_speed = 50;
-        type_next_letter_toc = function() {
-          $('#typewriter-toc').append(table_of_contents[i]);
-          i++;
-          if (i < table_of_contents.length) {
-            setTimeout(type_next_letter_toc, type_speed);
-          } else {
-            $('#typewriter-toc').append('DONE!').addClass('typewriter-disabled');
-            following_following_step()
-          return false;
-          }
-        }
-        var timeout = setTimeout(type_next_letter_toc, type_speed);
-      }
-    });
-    var following_following_step = function() {
-      $('#typewriter-foreword').removeClass('typewriter-disabled');
-      var foreword = 'Loading Foreword..................................'
-        var i = 0;
-        var type_speed = 50;
-        type_next_letter_foreword = function() {
-          $('#typewriter-foreword').append(foreword[i]);
-          i++;
-          if (i < foreword.length) {
-            setTimeout(type_next_letter_foreword, type_speed);
-          } else {
-            $('#typewriter-foreword').append('ERROR!');
-            $('#typewriter-foreword').append('<br />');
-            $('#typewriter-foreword').append('ERR NO[HY000]: Site still under construction.');
-          return false;
-          }
-        }
-        var timeout = setTimeout(type_next_letter_foreword, type_speed);
-    }
-  </script>
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" 
+    integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" 
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" 
+    integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" 
+    crossorigin="anonymous"></script>
+  <script src="./scripts.js"></script>
   <!-- 
     Hello! I'm glad you took the time to look at the source code! Good on you! :D
     So, just to give a little bit of background. I attempted to do this with only importing bootstrap 4 and jQuery.
